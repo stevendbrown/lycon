@@ -231,7 +231,7 @@ struct VResizeCubicVec_32f16u
                           v_b3, vld1q_f32(S3 + x + 4));
 
             vst1q_u16(dst + x,
-                      vcombine_u16(vqmovn_u32(cv_vrndq_u32_f32(v_dst0)), vqmovn_u32(cv_vrndq_u32_f32(v_dst1))));
+                      vcombine_u16(vqmovn_u32(vcvtnq_u32_f32(v_dst0)), vqmovn_u32(vcvtnq_u32_f32(v_dst1))));
         }
 
         return x;
@@ -262,7 +262,7 @@ struct VResizeCubicVec_32f16s
                           v_b3, vld1q_f32(S3 + x + 4));
 
             vst1q_s16(dst + x,
-                      vcombine_s16(vqmovn_s32(cv_vrndq_s32_f32(v_dst0)), vqmovn_s32(cv_vrndq_s32_f32(v_dst1))));
+                      vcombine_s16(vqmovn_s32(vcvtnq_s32_f32(v_dst0)), vqmovn_s32(vcvtnq_s32_f32(v_dst1))));
         }
 
         return x;

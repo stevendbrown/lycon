@@ -50,7 +50,7 @@ lycon_option(LYCON_STATIC_LIBSTDCPP "Statically link against libstdc++" ON IF NO
 
 include_directories(src)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -march=native -O3 -fPIC -DNDEBUG -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3 -fPIC -DNDEBUG -pthread -mcpu=apple-m1")
 if(LYCON_STATIC_LIBSTDCPP)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++")
 endif()
